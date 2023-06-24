@@ -57,7 +57,7 @@
 
                                         <div class="col-md-2">
                                             <img src="{{asset('storage/images/'.$image->image)}}" width="100%">
-                                            <span class="btn btn-primary" style="margin-top:-60px;" onclick="deletefunction('<?= $image->id ?>')">X</span>
+                                            <span class="btn btn-primary" style="margin-top:-60px;" onclick="deletefunction('<?= $image->id ?>','{{ env('MAIN_URL') }}')">X</span>
                                         </div>
 
                                     @endforeach
@@ -82,7 +82,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <script>
-    function deletefunction(id){
+    function deletefunction(id,url){
 
 Swal.fire({
   title: 'Are you sure to delete?',
@@ -94,7 +94,7 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    $.ajax({url: "http://127.0.0.1:8000/admin/images/"+id+"/delete", success: function(result){
+    $.ajax({url: url+"/admin/images/"+id+"/delete", success: function(result){
 
         if(result == "success"){
         Swal.fire({

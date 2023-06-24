@@ -51,7 +51,7 @@
                                             <a href="{{ route('admin.feestructures.disable', $feestructure->id) }}" class="btn btn-sm btn-danger" style="margin:3px;"> <i class="fa fa-eye-slash" aria-hidden="true"></i> </a>
                                             @endif
                                             <a href="{{ route('admin.feestructures.edit', $feestructure->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                            <a onclick="deletefunction('<?= $feestructure->id ?>')" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a onclick="deletefunction('<?= $feestructure->id ?>','{{ env('MAIN_URL') }}')" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -79,7 +79,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <script>
-    function deletefunction(id){
+    function deletefunction(id,url){
 
 Swal.fire({
   title: 'Are you sure to delete?',
@@ -91,7 +91,7 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    $.ajax({url: "https://uttarpustika.com/admin/feestructures/"+id+"/delete", success: function(result){
+    $.ajax({url: url+"/admin/feestructures/"+id+"/delete", success: function(result){
 
         if(result == "success"){
         Swal.fire({

@@ -53,7 +53,7 @@
                                             @endif
 
                                             <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                            <a  class="btn btn-sm btn-danger" onclick="deletefunction('<?= $event->id ?>')"><i class="fa fa-trash"></i></a>
+                                            <a  class="btn btn-sm btn-danger" onclick="deletefunction('<?= $event->id ?>','{{ env('MAIN_URL') }}')"><i class="fa fa-trash"></i></a>
                                             <a href="{{ route('admin.events.delete', $event->id) }}" style="display:none;" id="deleteid"></a>
 
                                     </td>
@@ -82,7 +82,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <script>
-    function deletefunction(id){
+    function deletefunction(id,url){
 
 Swal.fire({
   title: 'Are you sure to delete?',
@@ -94,7 +94,7 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    $.ajax({url: "https://uttarpustika.com/admin/events/"+id+"/delete", success: function(result){
+    $.ajax({url: url+"/admin/events/"+id+"/delete", success: function(result){
 
         if(result == "success"){
         Swal.fire({

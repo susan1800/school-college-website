@@ -51,7 +51,7 @@
                                             @endif
                                         <br><br>
                                             <a href="{{ route('admin.achievers.edit', $achiver->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a><br><br>
-                                            <a  class="btn btn-sm btn-danger" onclick="deletefunction('<?= $achiver->id ?>')"><i class="fa fa-trash"></i></a>
+                                            <a  class="btn btn-sm btn-danger" onclick="deletefunction('<?= $achiver->id ?>','{{ env('MAIN_URL') }}')"><i class="fa fa-trash"></i></a>
                                             <a href="{{ route('admin.achievers.delete', $achiver->id) }}" style="display:none;" id="deleteid"></a>
 
                                     </td>
@@ -80,7 +80,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 <script>
-    function deletefunction(id){
+    function deletefunction(id,url){
 
 Swal.fire({
   title: 'Are you sure to delete?',
@@ -92,7 +92,7 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    $.ajax({url: "https://uttarpustika.com/admin/achievers/"+id+"/delete", success: function(result){
+    $.ajax({url: url+"/admin/achievers/"+id+"/delete", success: function(result){
 
         if(result == "success"){
         Swal.fire({
