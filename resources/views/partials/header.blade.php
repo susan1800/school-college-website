@@ -64,7 +64,7 @@
 
 <nav class="navbar navbar-expand-lg sticky-top bg-white heightdesktop" style="font-size: 19px;">
     <div class="navbar-brand">
-        <a class="logo-default " href="{{route('index')}}"><img class="heightdesktop" alt=""  src="assets/img/logo.jpg"></a>
+        <a class="logo-default " href="{{route('index')}}"><img class="heightdesktop" alt=""  src="{{asset('assets/img/logo.jpg')}}"></a>
 
 
     </div>
