@@ -107,7 +107,7 @@
                         -webkit-box-orient: vertical;">
                             {!! $about->details !!}
                         </div>
-                        <a href="aboutus.html" class="btn btn-outline-primary">
+                        <a href="{{route('about')}}" class="btn btn-outline-primary">
                             Read More
                         </a>
                     </div>
@@ -123,7 +123,7 @@
 
                     @foreach ($notices as $notice)
                         <div class="p-4 border-bottom wow fadeInUp">
-                            <a href="notices/70.html">
+                            <a href="{{asset('storage/'.$notice->file)}}" download>
                             <p class="text-primary mb-1">
                                 {{ $notice->created_at->format('M-d-Y') }}
                             </p>
@@ -138,7 +138,7 @@
                         @endforeach
 
                                         <div class="p-4">
-                        <a href="notices.html" class="btn btn-link pl-0">
+                        <a href="{{route('notice')}}" class="btn btn-link pl-0">
                             View All Notices
                         </a>
                     </div>
@@ -165,7 +165,7 @@
 
 
             <div class="col-lg-4 col-md-7 marginTop-30">
-                <a href="programs/14.html" class="card text-white height-100p hover:parent">
+                <a href="{{route('course',$course->id)}}" class="card text-white height-100p hover:parent">
                     <img class="hover:zoomin transition-0_3" src="{{asset('storage/'.$course->image)}}" alt="" height="350px;">
                     <div class="card-img-overlay bg-black-0_5 flex-center">
                         <h4>
@@ -196,7 +196,7 @@
 
                 <div class="col-md-2 col-lg-4 marginTop-30 " >
                     <a href="#" class="card shadow-v1 align-items-center p-5 hover:transformTop" style="  box-shadow: 2px 2px #bdbcbc; border-radius:10px;">
-                        <img src="frontend/img/svg/4.png" alt="">
+                        <img src="{{asset('frontend/img/svg/4.png')}}" alt="">
                         <h4 class="mt-2">
                             Events and Personal Development
                         </h4>
@@ -206,7 +206,7 @@
 
                 <div class="col-md-6 col-lg-4 marginTop-30">
                     <a href="#" class="card shadow-v1 align-items-center p-5 hover:transformTop" style="  box-shadow: 2px 2px #bdbcbc; border-radius:10px;">
-                        <img src="frontend/img/svg/5.png" alt="">
+                        <img src="{{asset('frontend/img/svg/5.png')}}" alt="">
                         <h4 class="mt-2">
                             Sports and Extra Curricular Activities
                         </h4>
@@ -216,7 +216,7 @@
 
                 <div class="col-md-6 col-lg-4 marginTop-30" >
                     <a href="#" class="card shadow-v1 align-items-center p-5 hover:transformTop" style=" box-shadow: 2px 2px #bdbcbc; border-radius:10px;">
-                        <img src="frontend/img/svg/6.png" alt="">
+                        <img src="{{asset('frontend/img/svg/6.png')}}" alt="">
                         <h4 class="mt-2">
                             Best Environment to Groom
                         </h4>
@@ -248,7 +248,7 @@ use Carbon\Carbon;
                             <div class="col-lg-4 col-md-6 marginTop-30 wow fadeIn" data-wow-delay=".1s">
                     <div class="card shadow-v1">
                         <div class="padding-10 border-bottom">
-                            <a href="events/21.html" class="h6 text">
+                            <a href="{{route('single.event',$event->id)}}" class="h6 text">
                             {{$event->title}}
                             </a>
                         </div>
@@ -390,7 +390,9 @@ if($('.brands_slider').length)
                 <h4>
                     Achievers  <span class="text-primary"></span>
                 </h4>
-                <p class="col-md-8" style="text-align: center; padding:auto; margin:auto;  text-align: justify;">We Prove What We Claim’ has become obvious as many of our students have not only achieved their expected goals but also have presented themselves as a strong competent in global career milieu.<a href="" style="color:blue; padding-left:10px;">View All ></a></p>
+                <p class="col-md-8" style="text-align: center; padding:auto; margin:auto;  text-align: justify;">
+                    We Prove What We Claim’ has become obvious as many of our students have not only achieved their expected goals but also have presented themselves as a strong competent in global career milieu.
+                    <a href="{{route('achievement')}}" style="color:blue; padding-left:10px;">View All ></a></p>
             </div>
         </div>
 

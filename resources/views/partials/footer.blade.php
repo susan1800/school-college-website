@@ -8,7 +8,7 @@
             <div class="row">
 
                 <div class="col-lg-4 col-md-6 mt-5">
-                    <img src="assets/img/logobg.png" alt="Logo">
+                    <img src="{{asset('assets/img/logobg.png')}}" alt="Logo">
                     <div class="margin-y-40">
                         <p>
                             Come, join us for a better future. Together today for a successful tomorrow.
@@ -56,12 +56,11 @@
                     <h4 class="h5 text-white">Quick links</h4>
                     <div class="width-3rem bg-primary height-3 mt-3"></div>
                     <ul class="list-unstyled marginTop-40">
-                        <li class="mb-2"><a href="aboutus.html">About Us</a></li>
-                        <li class="mb-2"><a href="contactus.html">Contact Us</a></li>
-                        <li class="mb-2"><a href="programs.html">Programs</a></li>
-                        <li class="mb-2"><a href="admission.html">Admission</a></li>
-                        <li class="mb-2"><a href="events.html">Events</a></li>
-                        <li class="mb-2"><a href="notices.html">Latest News</a></li>
+                        <li class="mb-2"><a href="{{route('about')}}">About Us</a></li>
+                        <li class="mb-2"><a href="{{route('contact')}}">Contact Us</a></li>
+                        <li class="mb-2"><a href="">Admission Form</a></li>
+                        <li class="mb-2"><a href="{{route('event')}}">Events</a></li>
+                        <li class="mb-2"><a href="{{route('notice')}}">Notice</a></li>
                     </ul>
                 </div>
 

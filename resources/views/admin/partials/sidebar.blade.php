@@ -108,31 +108,20 @@
                 <span class="app-menu__label">Event</span>
             </a>
         </li>
-
-
         <li>
-            <a class="app-menu__item {{ (Route::currentRouteName() == 'admin.metakeywords.index' || Route::currentRouteName() == 'admin.metakeywords.create' || Route::currentRouteName() == 'admin.metakeywords.edit') ? 'active' : '' }}"
-               href="{{ route('admin.metakeywords.index') }}">
-                <i class="app-menu__icon fa fa-cogs"></i>
-                <span class="app-menu__label">Meta Keyword</span>
-            </a>
-        </li>
-        <li>
-            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.feedbacks.index' ? 'active' : '' }}"
-               href="{{ route('admin.feedbacks.index') }}">
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.admissionforms.index' ? 'active' : '' }}"
+               href="{{ route('admin.admissionforms.index') }}">
                 <i class="app-menu__icon fa fa-thumbs-up"></i>
-                <span class="app-menu__label">User Feedback</span>
+                <span class="app-menu__label">Admission form</span>
             </a>
         </li>
-
         <li>
-            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.sendnotes.index' ? 'active' : '' }}"
-               href="{{ route('admin.sendnotes.index') }}">
-                <i class="app-menu__icon fa fa-book"></i>
-                <span class="app-menu__label">Notes send by user</span>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.contacts.index' ? 'active' : '' }}"
+               href="{{ route('admin.contacts.index') }}">
+                <i class="app-menu__icon fa fa-thumbs-up"></i>
+                <span class="app-menu__label">Message From user</span>
             </a>
         </li>
-
 
     </ul>
 </aside>

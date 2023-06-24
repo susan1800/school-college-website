@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from cosmoscollege.edu.np/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Jun 2023 09:20:16 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
 
@@ -20,7 +18,7 @@
 
 
     <!-- Favicon and Apple Icons-->
-    <link rel="icon"  href="assets/img/icon.jpg">
+    <link rel="icon"  href="{{asset('assets/img/icon.jpg')}}">
 
 
     <!--Google fonts-->
@@ -40,8 +38,8 @@
 </head>
 
 
-<script src="frontend/js/vendors.bundle.js"></script>
-<script src="frontend/js/scripts.js"></script>
+<script src="{{asset('frontend/js/vendors.bundle.js')}}"></script>
+<script src="{{asset('frontend/js/scripts.js')}}"></script>
 <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
 <script>
 $("#partners").owlCarousel ({

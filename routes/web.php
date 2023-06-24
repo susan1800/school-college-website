@@ -8,6 +8,11 @@ use App\Http\Controllers\WelcomeMessageController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\AdmissionFormController;
+use App\Http\Controllers\AchivementController;
 
 
 
@@ -34,7 +39,17 @@ Route::get('/welcomemessage', [WelcomeMessageController::class ,'index'])->name(
 Route::get('/{id}/course', [CourseController::class ,'index'])->name('course');
 Route::get('/scholarship', [ScholarshipController::class ,'index'])->name('scholarship');
 Route::get('/notice', [NoticeController::class ,'index'])->name('notice');
+Route::get('/event', [EventController::class ,'index'])->name('event');
+Route::get('/event/{id}', [EventController::class ,'eventById'])->name('single.event');
+Route::get('/contactus', [ContactController::class ,'index'])->name('contact');
+Route::post('/message/store', [ContactController::class ,'store'])->name('contact.store');
+Route::get('/gallery', [GalleryController::class ,'index'])->name('gallery');
+Route::get('/gallery/{id}', [GalleryController::class ,'singleGallery'])->name('single.gallery');
 
+Route::get('/admission', [AdmissionFormController::class ,'index'])->name('admission');
+Route::post('/admission/store', [AdmissionFormController::class ,'store'])->name('admission.store');
+
+Route::get('/achievement', [AchivementController::class ,'index'])->name('achievement');
 
 // Route::get('/', function () {
 //     return view('index');

@@ -6,7 +6,7 @@
     </div>
 
 <body>
-<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(frontend/img/breadcrumb-bg.jpg) no-repeat">
+<div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url({{asset('frontend/img/breadcrumb-bg.jpg')}}) no-repeat">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-white">
@@ -41,95 +41,9 @@
 
                         {!! $about->details !!}
                     </div>
-                    <!--<ul class="list-inline">
-                        <li class="list-inline-item">Share on :</li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-facebook iconbox iconbox-sm"><i class="ti-facebook"></i></a>
-                            <a href="#" class="btn btn-twitter iconbox iconbox-sm"><i class="ti-twitter"></i></a>
-                            <a href="#" class="btn btn-google-plus iconbox iconbox-sm"><i class="ti-google"></i></a>
-                        </li>
-                    </ul>-->
+
                 </div>
             </div>
-
-
-
-
-{{--
-            <div class="col-lg-3 col-md-4">
-                <div class="card padding-30 shadow-v1  marginTop-30">
-                    <h4 class="mb-3">College Features</h4>
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <i class="fas fa-map-marker-alt mr-1"></i> <span class="font-weight-semiBold">Location:</span> <br>
-                            Chapagaun Dobato, Tutepani
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-briefcase mr-1"></i> <span class="font-weight-semiBold">Study Type:</span> <br>
-                            Full time
-                        </li>
-                        <!--<li class="mb-3">
-                            <i class="fas fa-dollar-sign mr-1"></i> <span class="font-weight-semiBold">Cost: </span> <br>
-                            4 Lakh Onwards
-                        </li>-->
-                        <li class="mb-3">
-                            <i class="fas fa-graduation-cap"></i> <span class="font-weight-semiBold">Education:</span> <br>
-                            class one to bachelor
-                        </li>
-                        {{-- <li class="mb-3">
-                            <i class="fas fa-flask mr-1"></i> <span class="font-weight-semiBold">Experience:</span> <br>
-                            Not required
-                        </li> --}}
-                    {{-- </ul>
-                </div>
-                <div class="card padding-30 shadow-v1  marginTop-30">
-                    <h4 class="mb-3">College Info</h4>
-                    <ul class="list-unstyled">
-
-                        <li>
-                            <span class="font-weight-semiBold">Address:</span> Chapagaun Dobato
-                        </li>
-                        <li>
-                            <span class="font-weight-semiBold">College Size:</span>  120+ Employee
-                        </li>
-                        <li>
-                            <span class="font-weight-semiBold">University:</span> <a href="#">Pokhara University</a>
-                        </li>
-                        <li>
-                            <span class="font-weight-semiBold">Phone:</span> +97715151411
-                        </li>
-                        <li>
-                            <span class="font-weight-semiBold">Email:</span> <a href="#">info@cosmoscollege.edu.np</a>
-                        </li>
-                        <li>
-                            <span class="font-weight-semiBold">Website:</span> <a href="#">www.cosmoscollege.edu.np</a>
-                        </li>
-                    </ul> --}}
-
-                   <!-- <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-facebook iconbox iconbox-xs">
-                                <i class="ti-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-twitter iconbox iconbox-xs">
-                                <i class="ti-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-linkedin iconbox iconbox-xs">
-                                <i class="ti-linkedin"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-google-plus iconbox iconbox-xs">
-                                <i class="ti-google"></i>
-                            </a>
-                        </li>
-                    </ul>-->
-                {{-- </div>
-            </div> --}}
         </div> <!-- END row-->
     </div> <!-- END container-->
 </section>

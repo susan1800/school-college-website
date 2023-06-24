@@ -4,7 +4,7 @@
 <body>
 
 
-    <div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url(frontend/img/breadcrumb-bg.jpg) no-repeat">
+    <div class="padding-y-80 bg-cover" data-dark-overlay="6" style="background:url({{asset('frontend/img/breadcrumb-bg.jpg')}}) no-repeat">
         <div class="container" >
             <div class="row align-items-center">
                 <div class="col-md-6 text-white">
@@ -16,7 +16,7 @@
                             <a href="{{route('index')}}">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                           =Notice
+                           Notice
                         </li>
                     </ol>
                 </div>
@@ -45,53 +45,18 @@
                             </div>
 
                             <div class="media-body " style="padding-left:5px;">
-                                <a href="{{asset('storage/'.$notice->file)}}" class="h5">
+                                <a href="{{asset('storage/'.$notice->file)}}" class="h5" download>
                                     {{$notice->title}}
                                 </a>
                             </div>
                         </div>
-                        <a href="{{asset('storage/'.$notice->file)}}" class="btn btn-outline-primary">Read Notice</a>
+                        <a href="{{asset('storage/'.$notice->file)}}" class="btn btn-outline-primary" download>Read Notice</a>
                     </div>
 
                     @endforeach
-
                                     <div class="col-12 marginTop-80">
-
-
-                                        {{$notices->links()}}
-                        <ul class="pagination pagination-primary justify-content-center">
-                            <ul class="pagination" role="navigation">
-
-                    <li class="page-item">
-                <a class="page-link" href="notices235c.html?page=7" rel="prev" aria-label="&laquo; Previous">&lsaquo;</a>
-            </li>
-
-
-
-
-
-                                                                        <li class="page-item"><a class="page-link" href="notices2679.html?page=1">1</a></li>
-                                                                                <li class="page-item"><a class="page-link" href="notices4658.html?page=2">2</a></li>
-                                                                                <li class="page-item"><a class="page-link" href="notices9ba9.html?page=3">3</a></li>
-                                                                                <li class="page-item"><a class="page-link" href="noticesfdb0.html?page=4">4</a></li>
-                                                                                <li class="page-item"><a class="page-link" href="noticesaf4d.html?page=5">5</a></li>
-                                                                                <li class="page-item"><a class="page-link" href="noticesc575.html?page=6">6</a></li>
-                                                                                <li class="page-item"><a class="page-link" href="notices235c.html?page=7">7</a></li>
-                                                                                <li class="page-item active" aria-current="page"><span class="page-link">8</span></li>
-                                                                                <li class="page-item"><a class="page-link" href="notices0b08.html?page=9">9</a></li>
-
-
-                    <li class="page-item">
-                <a class="page-link" href="notices0b08.html?page=9" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
-            </li>
-            </ul>
-
-                        </ul>
-                    </div>
-
-
             </div>
-
+{!! $notices->links('partials.custompaginator') !!}
 
         </div> <!-- END row-->
     </div> <!-- END container-->

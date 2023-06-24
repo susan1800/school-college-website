@@ -14,13 +14,10 @@
 
             <ul class="list-inline mb-0">
                 <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-left border-white-0_1">
-                    <a href="https://entrance.cosmoscollege.edu.np/">Admission Form</a>
+                    <a href="{{route('admission')}}">Admission Form</a>
                 </li>
-                {{-- <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1">
-                    <a href="contactus.html">Downloads</a>
-                </li> --}}
                 <li class="list-inline-item mr-0 p-md-3 p-2 border-right border-white-0_1">
-                    <a href="contactus.html">Gallery</a>
+                    <a href="{{route('gallery')}}">Gallery</a>
                 </li>
             </ul>
             <ul class="list-inline mb-0">
@@ -98,7 +95,6 @@
 
                 </ul>
             </li>
-
             <li class="nav-item nav-item__has-dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Course</a>
                 <ul class="dropdown-menu">
@@ -108,7 +104,6 @@
                 </ul>
 
             </li>
-
             <li class="nav-item ">
                 <a class="nav-link " href="{{route('scholarship')}}">Scholarship</a>
 
@@ -116,14 +111,14 @@
 
             <li class="nav-item nav-item__has-dropdown">
 
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="notices.html">Notices</a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Notices</a>
                 <ul class="dropdown-menu">
-                    <li> <a href="notices.html" class="nav-link__list">Recent Notices</a></li>
-                    <li><a href="events.html" class="nav-link__list">Events</a></li>
+                    <li> <a href="{{route('notice')}}" class="nav-link__list">Recent Notices</a></li>
+                    <li><a href="{{route('event')}}" class="nav-link__list">Events</a></li>
                 </ul>
             </li>
 
-            <a class="nav-link" href="careers.html">Contact Us</a>
+            <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
 
 
 
