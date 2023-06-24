@@ -22,10 +22,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($lifes as $life)
                             @if ($life->id != 0)
                                 <tr>
-                                    <td>{{ $life->id }}</td>
+                                    <td>{{ $i }}</td>
 
 
                                     <td><img src="{{asset('storage/'.$life->image )}}" height="100" width="auto"></td>
@@ -44,6 +47,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

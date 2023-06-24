@@ -25,10 +25,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                         @foreach($welcomes as $welcome)
                             @if ($welcome->id != 0)
                                 <tr>
-                                    <td>{{ $welcome->id }} </td>
+                                    <td>{{ $i }} </td>
 
 
                                     <td>{{ $welcome->name }}</td>
@@ -55,6 +58,9 @@
 
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

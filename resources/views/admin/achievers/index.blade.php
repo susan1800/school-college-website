@@ -24,10 +24,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($achievers as $achiver)
                             @if ($achiver->id != 0)
                                 <tr>
-                                    <td>{{ $achiver->id }} </td>
+                                    <td>{{ $i }} </td>
 
 
                                     <td>{{ $achiver->name }}
@@ -56,6 +59,9 @@
 
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

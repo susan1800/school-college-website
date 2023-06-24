@@ -23,10 +23,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($notices as $notice)
                             @if ($notice->id != 0)
                                 <tr>
-                                    <td>{{ $notice->id }} </td>
+                                    <td>{{ $i }} </td>
 
 
                                     <td>{{ $notice->title }}
@@ -52,6 +55,9 @@
 
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

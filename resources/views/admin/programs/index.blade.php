@@ -24,10 +24,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($programs as $program)
                             @if ($program->id != 0)
                                 <tr>
-                                    <td>{{ $program->id }} </td>
+                                    <td>{{ $i }} </td>
 
 
                                     <td>{{ $program->title }}
@@ -56,6 +59,9 @@
 
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

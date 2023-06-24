@@ -31,10 +31,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($feestructures as $feestructure)
                             @if ($feestructure->id != 0)
                                 <tr>
-                                    <td>{{ $feestructure->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $feestructure->title }}</td>
                                     <td>{{ $feestructure->science }}</td>
                                     <td>{{ $feestructure->management}}</td>
@@ -55,6 +58,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

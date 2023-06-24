@@ -25,10 +25,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($galleries as $gallery)
                             @if ($gallery->id != 0)
                                 <tr>
-                                    <td>{{ $gallery->id }} </td>
+                                    <td>{{ $i }} </td>
 
 
                                     <td>{{ $gallery->title }}</td>
@@ -55,6 +58,9 @@
 
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

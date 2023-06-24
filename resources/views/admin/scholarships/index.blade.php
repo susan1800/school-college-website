@@ -26,10 +26,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($scholarships as $scholarship)
                             @if ($scholarship->id != 0)
                                 <tr>
-                                    <td>{{ $scholarship->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $scholarship->title }}</td>
                                     <td>{{ $scholarship->quota }}</td>
                                     <td>{{ $scholarship->waive}}</td>
@@ -49,6 +52,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

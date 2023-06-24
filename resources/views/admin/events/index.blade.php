@@ -27,10 +27,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($events as $event)
                             @if ($event->id != 0)
                                 <tr>
-                                    <td>{{ $event->id }} </td>
+                                    <td>{{ $i }} </td>
 
 
                                     <td>{{ $event->title }}</td>
@@ -58,6 +61,9 @@
 
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

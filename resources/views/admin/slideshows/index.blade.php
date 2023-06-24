@@ -22,10 +22,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($slideshows as $slideshow)
                             @if ($slideshow->id != 0)
                                 <tr>
-                                    <td>{{ $slideshow->id }}</td>
+                                    <td>{{ $i }}</td>
 
 
                                     <td><img src="{{asset('storage/'.$slideshow->image )}}" height="100" width="auto"></td>
@@ -44,6 +47,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>
