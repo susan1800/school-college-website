@@ -12,7 +12,7 @@ class AchivementController extends Controller
     public function index(){
         $about = About::first();
         $courses = Course::where('status',1)->get();
-        $achievers = Achiever::where('status',1)->get();
+        $achievers = Achiever::where('status',1)->latest()->get();
 
         return view('achievers',compact('about','courses','achievers'));
     }

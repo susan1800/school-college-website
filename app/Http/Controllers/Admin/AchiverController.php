@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class AchiverController extends BaseController
 {
     public function index(){
-        $achievers = Achiever::get();
+        $achievers = Achiever::latest()->get();
         $this->setPageTitle('Achiever', 'Achiever');
         return view('admin.achievers.index', compact('achievers'));
     }
