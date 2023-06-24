@@ -30,8 +30,8 @@
 
 <section class="padding-y-10">
     <div class="container col-md-11">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
+        <div class="row ">
+            <div class="col-lg-8 align-items-center">
                 <h2>
                     Course Information
                 </h2>
@@ -41,7 +41,8 @@
                 </p>
             </div> <!-- END col-lg-6 ml-auto-->
 
-            <div class="col-lg-4" style=" padding:10px; border-left: 2px solid red; height:100%;">
+            <div class="col-lg-4 col-md-4" style="border-left: 2px solid red; height: 100%;">
+                <div style="height: 100%">
                 <h3 style="height: 40px; width:100%;">Other Course</h3>
                 <hr>
                 @foreach($courses as $course)
@@ -65,6 +66,7 @@
 
 
             </div>
+        </div>
         </div> <!-- END row-->
     </div> <!-- END container-->
 </section>
