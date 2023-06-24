@@ -108,7 +108,7 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label class="control-label">Image</label>
+                        <label class="control-label">Image <span class="m-l-5 text-danger"> *</span> </label>
                         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
                         @error('image') {{ $message }} @enderror
                     </div>

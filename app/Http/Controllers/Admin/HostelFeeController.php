@@ -48,7 +48,7 @@ class HostelFeeController extends BaseController
             return $this->responseRedirect('admin.hostelfees.index', 'hostelfee added successfully' ,'success',false, false);
 
         } catch (QueryException $exception) {
-            dd($exception);
+
             return $this->responseRedirectBack('Error occurred while creating hostelfee.', 'error', true, true);
         }
 

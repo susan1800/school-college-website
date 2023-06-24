@@ -39,7 +39,7 @@
                                 <tr>
                                     <td>{{ $i }}</td>
 
-                                    <td>{!! $form->name !!}</td>
+                                    <td>{{ $form->name }}<br> <img src="{{asset('storage/form/'.$form->image)}}" width="100px"> </td>
                                     <td>{{ $form->mobile }}</td>
                                     <td>{{ $form->school_name }}</td>
                                     <td>{{ $form->see_grade }}</td>
