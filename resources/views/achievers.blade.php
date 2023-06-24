@@ -105,7 +105,7 @@
 
 
         @foreach($achievers as $achiever)
-    <div class=" col-md-3 " data-aos="fade-up" style="padding:5px;">
+    <div class=" col-md-3 col-lg-3 " data-aos="fade-up" style="padding:5px;">
         <a class="d-block photo-item">
     <img src="{{asset('storage/'.$achiever->image)}}" alt="Image" class="img-fluid" width="100%" height="100%">
     <div class="photo-text-more">
