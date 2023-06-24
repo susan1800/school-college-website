@@ -52,14 +52,16 @@
     </thead>
     <tbody>
         @foreach ($scholarships as $scholarship)
+        <tr>
             <td style="padding-top:10px;padding-bottom:10px;">{{$scholarship->title}}</td>
             <td style="padding-top:10px;padding-bottom:10px;">{{$scholarship->quota}}</td>
             <td style="padding-top:10px;padding-bottom:10px;">{{$scholarship->waive}}</td>
             <td style="padding-top:10px;padding-bottom:10px;">{{$scholarship->eligibility}}</td>
             <td style="padding-top:10px;padding-bottom:10px;">{{$scholarship->remarks}}</td>
-        @endforeach
-        <tr>
         </tr>
+        @endforeach
+
+
     </tbody>
 </table>
 <figcaption>*Conditions Apply</figcaption></figure>
