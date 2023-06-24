@@ -81,6 +81,7 @@
                 <th>Science</th>
                 <th>Management</th>
                 <th>Humanities</th>
+                <th>BBS</th>
                 <th>Remarks</th>
             </tr>
         </thead>
@@ -90,11 +91,12 @@
             @endphp
             @foreach($feestructures as $fee)
             <tr>
-                <tr>{{$i}}</tr>
+                <td>{{$i}}</td>
                 <td style="padding-top:10px; padding:bottom:10px;">{{$fee->title}}</td>
                 <td style="padding-top:10px; padding:bottom:10px;">{{$fee->science}}</td>
                 <td style="padding-top:10px; padding:bottom:10px;">{{$fee->management}}</td>
                 <td style="padding-top:10px; padding:bottom:10px;">{{$fee->humanities}}</td>
+                <td style="padding-top:10px; padding:bottom:10px;">{{$fee->bbs}}</td>
                 <td style="padding-top:10px; padding:bottom:10px;">{{$fee->remarks}}</td>
             </tr>
             @php
