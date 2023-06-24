@@ -403,12 +403,13 @@ if($('.brands_slider').length)
 
                         @foreach ($achievers as $achiever)
 
-                        @endforeach
+
                         <div class="owl-item" style="padding:0px; margin:0px;">
                             <div class="brands_item d-flex flex-column justify-content-center" >
                                 <img src="{{asset('storage/'.$achiever->image)}}" alt="" style="height:100px;">
                             </div>
                         </div>
+                        @endforeach
 
                     </div>
                     <div class="brands_next " style="width:5%; height:30px; margin-top:70px; margin-left:5px;"><div style="width:20px; padding:5px; background:white; border-radius:50%; cursor: pointer; color:black;"> > </div></div>
