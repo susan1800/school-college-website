@@ -23,8 +23,8 @@
 </div>
 
 
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{asset('js/jquery.fancybox.min.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
 
 
 
