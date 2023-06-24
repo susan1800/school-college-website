@@ -77,7 +77,7 @@ class GalleryController extends BaseController
     public function edit($id){
         try {
             $targetgallery = Gallery::find($id);
-            $this->setPageTitle('Notice', 'Edit notice : '.$targetgallery->name);
+            $this->setPageTitle('Gallery', 'Edit Gallery');
             return view('admin.galleries.edit', compact('targetgallery'));
 
         } catch (ModelNotFoundException $e) {

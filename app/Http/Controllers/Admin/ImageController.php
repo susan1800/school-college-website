@@ -18,7 +18,7 @@ class ImageController extends BaseController
     public function index(){
         $images = Gallery::get();
         // dd($images);
-        $this->setPageTitle('Gallery', 'Gallery');
+        $this->setPageTitle('Gallery images', 'Gallery images');
         return view('admin.images.index', compact('images'));
     }
 
@@ -27,7 +27,7 @@ class ImageController extends BaseController
 
     public function create(){
         $galleries = Gallery::get();
-        $this->setPageTitle('Gallery ', 'Create Gallery');
+        $this->setPageTitle('Gallery ', 'Create Gallery images');
         return view('admin.images.create', compact('galleries'));
     }
 
@@ -82,7 +82,7 @@ class ImageController extends BaseController
         try {
             $galleries = Gallery::get();
             $targetgallery = Gallery::find($id);
-            $this->setPageTitle('Gallery Image', 'Edit Gallery image : '.$targetgallery->name);
+            $this->setPageTitle('Gallery Image', 'Edit Gallery image ');
             return view('admin.images.edit', compact('targetgallery','galleries'));
 
         } catch (ModelNotFoundException $e) {

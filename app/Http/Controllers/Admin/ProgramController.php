@@ -79,7 +79,7 @@ class ProgramController extends BaseController
     public function edit($id){
         try {
             $targetProgram = Course::find($id);
-            $this->setPageTitle('Program Us', 'Edit Program : '.$targetProgram->name);
+            $this->setPageTitle('Program Us', 'Edit Program');
             return view('admin.programs.edit', compact('targetProgram'));
 
         } catch (ModelNotFoundException $e) {

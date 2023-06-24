@@ -76,7 +76,7 @@ class NoticeController extends BaseController
     public function edit($id){
         try {
             $targetnotice = Notice::find($id);
-            $this->setPageTitle('Notice', 'Edit notice : '.$targetnotice->name);
+            $this->setPageTitle('Notice', 'Edit notice');
             return view('admin.notices.edit', compact('targetnotice'));
 
         } catch (ModelNotFoundException $e) {

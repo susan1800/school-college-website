@@ -73,7 +73,7 @@ class AboutController extends BaseController
     public function edit($id){
         try {
             $targetAbout = About::find($id);
-            $this->setPageTitle('About Us', 'Edit About : '.$targetAbout->name);
+            $this->setPageTitle('About Us', 'Edit About');
             return view('admin.abouts.edit', compact('targetAbout'));
 
         } catch (ModelNotFoundException $e) {

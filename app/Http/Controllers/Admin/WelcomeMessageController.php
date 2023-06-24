@@ -77,7 +77,7 @@ class WelcomeMessageController extends BaseController
     public function edit($id){
         try {
             $targetWelcome = WelcomeMessage::find($id);
-            $this->setPageTitle('Notice', 'Edit notice : '.$targetWelcome->name);
+            $this->setPageTitle('Welcome message', 'Edit Welcome message');
             return view('admin.welcome_messages.edit', compact('targetWelcome'));
 
         } catch (ModelNotFoundException $e) {

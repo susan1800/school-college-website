@@ -16,14 +16,14 @@ class LifeController extends BaseController
 {
     public function index(){
         $lifes = Life::get();
-        $this->setPageTitle('Slideshow', 'Slideshow');
+        $this->setPageTitle('Life at advance academy', 'Life at advance academy');
         return view('admin.lifes.index', compact('lifes'));
     }
 
 
 
     public function create(){
-        $this->setPageTitle('Life at advance', 'Create Life at Advance');
+        $this->setPageTitle('Life at advance', 'Create Life at Advance academy');
         return view('admin.lifes.create');
     }
 
@@ -70,7 +70,7 @@ class LifeController extends BaseController
     public function edit($id){
         try {
             $targetlife = Life::find($id);
-            $this->setPageTitle('Life', 'Edit Life at advance : '.$targetlife->name);
+            $this->setPageTitle('Life', 'Edit Life at advance academy ');
             return view('admin.lifes.edit', compact('targetlife'));
 
         } catch (ModelNotFoundException $e) {

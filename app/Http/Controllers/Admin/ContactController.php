@@ -17,7 +17,7 @@ class ContactController extends BaseController
     public function index(){
 
         $contacts = ContactMessage::get();
-        $this->setPageTitle('Admission Form', 'Admission Form');
+        $this->setPageTitle('User Message', 'User Message');
         return view('admin.contacts.index', compact('contacts'));
 
         // return view('admission',compact('about','courses'));

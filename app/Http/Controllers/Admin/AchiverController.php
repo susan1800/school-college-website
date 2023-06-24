@@ -15,14 +15,14 @@ class AchiverController extends BaseController
 {
     public function index(){
         $achievers = Achiever::get();
-        $this->setPageTitle('Achievers', 'Achievers');
+        $this->setPageTitle('Achiever', 'Achiever');
         return view('admin.achievers.index', compact('achievers'));
     }
 
 
 
     public function create(){
-        $this->setPageTitle('achievers ', 'Create achiever');
+        $this->setPageTitle('achiever ', 'Create achiever');
         return view('admin.achievers.create');
     }
 
