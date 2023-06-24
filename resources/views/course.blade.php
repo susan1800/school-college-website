@@ -41,7 +41,7 @@
                 </p>
             </div> <!-- END col-lg-6 ml-auto-->
 
-            <div class="col-lg-4 col-md-4" style="border-left: 2px solid red; height: 100%;">
+            <div class="col-lg-4 col-md-4" style="border-left: 2px solid red; height: 100%; padding-top:100px;">
                 <div style="height: 100%">
                 <h3 style="height: 40px; width:100%;">Other Course</h3>
                 <hr>
