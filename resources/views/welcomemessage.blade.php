@@ -27,10 +27,10 @@
 <section class="paddingTop-80 pb-5 pb-md-0">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <img src="{{asset('storage/'.$principal->image)}}" alt="">
             </div>
-            <div class="col-md-6 mt-2">
+            <div class="col-md-8 mt-2">
                 <h2>
                     <small class="text-primary d-block">
                         Welcome to Advance Academy.
@@ -54,7 +54,7 @@
 <section class="paddingTop-80 pb-5 pb-md-0">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <img src="{{asset('storage/'.$viceprincipal->image)}}" alt="">
             </div>
             <div class="col-md-6 mt-2">
