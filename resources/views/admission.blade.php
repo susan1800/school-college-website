@@ -38,7 +38,7 @@
                 @csrf
                 <div class="tile-body">
                     <div class="form-group col-md-12">
-                        <label class="control-label" for="name">Full Name <span class="m-l-5 text-danger"> *</span></label>
+                        <label class="control-label" for="name">Applicant Full Name <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name') }}" placeholder="your full name"/>
                         @error('name') {{ $message }} @enderror
                     </div>
@@ -79,18 +79,18 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label class="control-label" for="birthday">Birthday <span class="m-l-5 text-danger"> *</span></label>
+                        <label class="control-label" for="birthday">Applicant Birthday <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('birthday') is-invalid @enderror" type="date" name="birthday" id="birthday" value="{{ old('birthday') }}"/>
                         @error('birthday') {{ $message }} @enderror
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label class="control-label" for="nationality">Nationality <span class="m-l-5 text-danger"> *</span></label>
+                        <label class="control-label" for="nationality">Applicant Nationality <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" id="nationality" value="{{ old('nationality') }}" placeholder="Eg:Nepali"/>
                         @error('nationality') {{ $message }} @enderror
                     </div>
                     <div class="form-group col-md-12">
-                        <label class="control-label" for="mobile">mobile <span class="m-l-5 text-danger"> *</span></label>
+                        <label class="control-label" for="mobile">Applicant mobile number <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('mobile') is-invalid @enderror" type="number" name="mobile" id="mobile" value="{{ old('mobile') }}" placeholder="your mobile number"/>
                         @error('mobile') {{ $message }} @enderror
                     </div>
@@ -108,14 +108,14 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label class="control-label">Image <span class="m-l-5 text-danger"> *</span> </label>
+                        <label class="control-label">Applicant Photo <span class="m-l-5 text-danger"> *</span> </label>
                         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
                         @error('image') {{ $message }} @enderror
                     </div>
 
 
                     <div class="form-group col-md-12">
-                        <label class="control-label" for="query">query</label>
+                        <label class="control-label" for="query">Write your query(if any)</label>
                         <textarea class="form-control @error('query') is-invalid @enderror " rows="4" name="query" id="query">{{ old('query') }}</textarea>
                         @error('query') {{ $message }} @enderror
                     </div>
