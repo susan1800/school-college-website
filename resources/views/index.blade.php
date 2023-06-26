@@ -406,7 +406,7 @@ if($('.brands_slider').length)
 
                         <div class="owl-item" style="padding:0px; margin:0px;">
                             <div class="brands_item d-flex flex-column justify-content-center" >
-                                <img src="{{asset('storage/'.$achiever->image)}}" alt="" style="height:100px;">
+                                <img src="{{asset('storage/'.$achiever->image)}}" alt="" style="height:100px; width:auto;">
                             </div>
                         </div>
                         @endforeach
