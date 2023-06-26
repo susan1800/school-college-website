@@ -47,7 +47,7 @@
                     @foreach ($lifes as $life)
 
 
-                <div class="" data-aos="fade-up" style="padding:3px;">
+                <div class="col-lg-3" data-aos="fade-up" style="padding:3px;">
                 <a href="{{asset('storage/'.$life->image)}}" class="d-block photo-item" data-fancybox="gallery">
                 <img src="{{asset('storage/'.$life->image)}}" alt="Image" class="img-fluid" style="height:300px;">
                 <div class="photo-text-more">

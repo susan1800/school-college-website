@@ -46,7 +46,7 @@
 
                 <div class="" data-aos="fade-up" style="padding:3px;">
                 <a href="{{asset('storage/images/'.$image->image)}}" class="d-block photo-item" data-fancybox="gallery">
-                <img src="{{asset('storage/images/'.$image->image)}}" alt="Image" class="img-fluid" style="height:300px;">
+                <img src="{{asset('storage/images/'.$image->image)}}" alt="Image" class="img-fluid col-lg-12" style="height:300px;">
                 <div class="photo-text-more">
                 <span class="icon icon-search"></span>
                 </div>

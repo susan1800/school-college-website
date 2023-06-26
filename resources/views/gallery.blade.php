@@ -105,7 +105,7 @@
 
 
         @foreach($galleries as $gallery)
-    <div class=" " data-aos="fade-up" style="padding:3px;">
+    <div class="col-lg-4 " data-aos="fade-up" style="padding:3px;">
     <a href="{{route('single.gallery',$gallery->id)}}" class="d-block photo-item">
     <img src="{{asset('storage/'.$gallery->image)}}" alt="Image" class="img-fluid">
     <div class="photo-text-more">
