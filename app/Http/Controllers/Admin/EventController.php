@@ -18,16 +18,10 @@ class EventController extends BaseController
         $this->setPageTitle('events', 'events');
         return view('admin.events.index', compact('events'));
     }
-
-
-
     public function create(){
         $this->setPageTitle('events ', 'Create event');
         return view('admin.events.create');
     }
-
-
-
 
     public function store(Request $request){
         // dd($request);

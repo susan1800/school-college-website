@@ -25,7 +25,7 @@ class AdmissionFormController extends BaseController
     public function store(Request $request){
         $this->validate($request, [
             'name' => 'required',
-            'see_grade' =>'required',
+
             'course' =>  'required',
             'gender' =>'required',
             'birthday' => 'required',
@@ -33,13 +33,31 @@ class AdmissionFormController extends BaseController
             'mobile' =>'required|digits:10',
             'father_name' => 'required',
             'father_number' => 'required|digits:10',
-            'school_name' => 'required',
             'image'     =>  'required|mimes:jpg,jpeg,png',
         ]);
 
         $collection = $request->except('_token');
 
         try {
+
+            if($request->course == "science" || $request->course == "management" || $request->course == "humanities"){
+                $this->validate($request, [
+
+                    'see_grade' =>'required',
+                    'school_name' => 'required',
+                ]);
+            }
+
+            if($request->course == "bbs"){
+                $this->validate($request, [
+
+                    'see_grade' =>'required',
+                    'school_name' => 'required',
+                    'neb_grade' =>'required',
+                    'neb_school_name' => 'required',
+                ]);
+            }
+
             $filename = null;
             $uploadedFile = $request->file('image');
             $filename = time().Str::random(10).'.'. $uploadedFile->getClientOriginalExtension();

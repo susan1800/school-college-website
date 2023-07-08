@@ -55,18 +55,21 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label class="control-label" for="course">course <span class="m-l-5 text-danger"> *</span></label>
-                        <select  class="form-control @error('course') is-invalid @enderror" name="course">
+                        <select  class="form-control @error('course') is-invalid @enderror" name="course" id="course" onchange="showoption()">
                             <option value="">Select Course</option>
-                            <option value="preeschool">Pre-School</option>
-                            <option value="science">+2 Science</option>
-                            <option value="management">+2 Management</option>
-                            <option value="humanities">+2 Humanities</option>
-                            <option value="bbs">BBS</option>
+                            <option value="school" @if(old('course') == 'school') selected @endif>Pre-School</option>
+                            <option value="science" @if(old('course') == 'science') selected @endif>+2 Science</option>
+                            <option value="management" @if(old('course') == 'management') selected @endif>+2 Management</option>
+                            <option value="humanities" @if(old('course') == 'humanities') selected @endif>+2 Humanities</option>
+                            <option value="bbs" @if(old('course') == 'bbs') selected @endif>BBS</option>
+
                         </select>
 
                         @error('course') {{ $message }} @enderror
                     </div>
 
+
+                    <div id="see" style="display:none;">
                     <div class="form-group col-md-12">
                         <label class="control-label" for="see_grade">SEE Grade <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('see_grade') is-invalid @enderror" type="text" name="see_grade" id="see_grade" value="{{ old('see_grade') }}" placeholder="Eg:3.15(B+)"/>
@@ -74,9 +77,50 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label class="control-label" for="school_name">School Name <span class="m-l-5 text-danger"> *</span></label>
-                        <input class="form-control @error('school_name') is-invalid @enderror" type="text" name="school_name" id="school_name" value="{{ old('school_name') }}" placeholder="Eg:3.15(B+)"/>
+                        <input class="form-control @error('school_name') is-invalid @enderror" type="text" name="school_name" id="school_name" value="{{ old('school_name') }}" placeholder="School name"/>
                         @error('school_name') {{ $message }} @enderror
                     </div>
+                </div>
+
+                <div id="neb" style="display:none;">
+                    <div class="form-group col-md-12">
+                        <label class="control-label" for="neb_grade">+2 Grade <span class="m-l-5 text-danger"> *</span></label>
+                        <input class="form-control @error('neb_grade') is-invalid @enderror" type="text" name="neb_grade" id="neb_grade" value="{{ old('neb_grade') }}" placeholder="Eg:3.15(B+)"/>
+                        @error('neb_grade') {{ $message }} @enderror
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label" for="neb_school_name">+2 School Name <span class="m-l-5 text-danger"> *</span></label>
+                        <input class="form-control @error('neb_school_name') is-invalid @enderror" type="text" name="neb_school_name" id="neb_school_name" value="{{ old('neb_school_name') }}" placeholder="School name"/>
+                        @error('neb_school_name') {{ $message }} @enderror
+                    </div>
+                </div>
+
+
+                <script>
+                    showoption();
+                    function showoption(){
+
+                        value= document.getElementById('course');
+
+                        if((value.value == "science") || (value.value == "management") || (value.value == "humanities")){
+                            document.getElementById('see').style.display = 'block';
+                            document.getElementById('neb').style.display = 'none';
+                        }
+                        if(value.value == "bbs"){
+
+                            document.getElementById('see').style.display = 'block';
+                            document.getElementById('neb').style.display = 'block';
+                        }
+                        if((value.value == "school")){
+                            document.getElementById('see').style.display = 'none';
+                            document.getElementById('neb').style.display = 'none';
+                        }
+
+                    }
+                </script>
+
+
+
 
                     <div class="form-group col-md-12">
                         <label class="control-label" for="birthday">Applicant Birthday <span class="m-l-5 text-danger"> *</span></label>
