@@ -18,7 +18,7 @@
                         <tr>
                             <th> # </th>
                             <th>image</th>
-                            <th>Link</th>
+                            <th style="">Link</th>
                             <th style="" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -43,12 +43,13 @@
                                         <img src="{{asset('storage/'.$picture->image )}}" height="auto" width="200">
 
                                     </td>
-                                    <td>{{asset('storage/'.$picture->image )}}</td>
+                                    <td ><p style="width:250px !important; word-wrap: break-word;">{{asset('storage/'.$picture->image )}}</p></td>
 
 
                                     <td class="text-center">
+                                        <button onclick="myFunction('{{asset('storage/'.$picture->image )}}')">Copy text</button>
                                         <div class="btn-group" role="group" aria-label="Second group">
-                                            <button onclick="myFunction('{{asset('storage/'.$picture->image )}}')">Copy text</button> <br>
+
                                             <a href="{{ route('admin.allimages.edit', '1') }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                             {{-- <a onclick="deletefunction(<?= $gallery->id ?>)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> --}}
 
