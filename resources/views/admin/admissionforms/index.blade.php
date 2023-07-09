@@ -22,6 +22,8 @@
                             <th>school name</th>
                             <th>SEE Grade</th>
                             <th>Course</th>
+                            <th>+2 Grade</th>
+                            <th>+2 School</th>
                             <th>Birthday</th>
                             <th>Nationality</th>
                             <th>Farher Name</th>
@@ -44,6 +46,8 @@
                                     <td>{{ $form->school_name }}</td>
                                     <td>{{ $form->see_grade }}</td>
                                     <td>{{ $form->course }}</td>
+                                    <td>{{ $form->neb_grade }}</td>
+                                    <td>{{ $form->neb_school_name }}</td>
                                     <td>{{ $form->birthday }}</td>
                                     <td>{{ $form->nationality }}</td>
                                     <td>{{ $form->father_name }}</td>
