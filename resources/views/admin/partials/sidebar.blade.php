@@ -123,5 +123,13 @@
             </a>
         </li>
 
+        <li>
+            <a class="app-menu__item {{ (Route::currentRouteName() == 'admin.allimages.index' || Route::currentRouteName() == 'admin.allimages.create' || Route::currentRouteName() == 'admin.allimages.edit') ? 'active' : '' }}"
+               href="{{ route('admin.allimages.index') }}">
+                <i class="app-menu__icon fa fa-thumbs-up"></i>
+                <span class="app-menu__label">Upload Image</span>
+            </a>
+        </li>
+
     </ul>
 </aside>

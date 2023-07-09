@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdmissionFormController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\AllImageController;
 
 Route::group(['prefix'  =>  'admin'], function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('admin.login');
@@ -72,6 +73,18 @@ Route::group(['prefix'  =>  'admin'], function () {
             Route::post('/update', [ImageController::class, 'update'])->name('admin.images.update');
             Route::get('/{id}/delete', [ImageController::class, 'delete'])->name('admin.images.delete');
             Route::get('/{id}/disable', [ImageController::class, 'disable'])->name('admin.images.disable');
+
+        });
+
+
+        Route::group(['prefix'  =>   'updateimages'], function() {
+            Route::get('/', [AllImageController::class, 'index'])->name('admin.allimages.index');
+            Route::get('/create', [AllImageController::class, 'create'])->name('admin.allimages.create');
+            Route::post('/store', [AllImageController::class, 'store'])->name('admin.allimages.store');
+            Route::get('/{id}/edit', [AllImageController::class, 'edit'])->name('admin.allimages.edit');
+            Route::post('/update', [AllImageController::class, 'update'])->name('admin.allimages.update');
+            Route::get('/{id}/delete', [AllImageController::class, 'delete'])->name('admin.allimages.delete');
+            Route::get('/{id}/disable', [AllImageController::class, 'disable'])->name('admin.allimages.disable');
 
         });
 

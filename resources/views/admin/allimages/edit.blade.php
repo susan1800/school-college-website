@@ -11,11 +11,11 @@
         <div class="col-md-12 mx-auto">
             <div class="tile">
                 <h3 class="tile-title">{{ $subTitle }}</h3>
-                <form action="{{ route('admin.images.update') }}" method="POST" role="form" enctype="multipart/form-data">
+                <form action="{{ route('admin.allimages.update') }}" method="POST" role="form" enctype="multipart/form-data">
                     @csrf
                     <div class="tile-body">
 
-                            <input type="hidden" name="id" value="{{ $targetgallery->id }}">
+                            {{-- <input type="hidden" name="id" value="{{ $targetimages->id }}"> --}}
 
 
 
@@ -30,16 +30,7 @@
                         <div class="form-group">
                             <div class="row">
 
-                                <div class="form-group col-md-10">
-                                    <label class="control-label">Select Gallery</label>
-                                    <select class="form-control" name="gallery_id" required>
-                                        <option value="">Select Gallery</option>
-                                        @foreach ($galleries as $gallery)
-                                         <option value="{{$gallery->id}}" @if($gallery->id == $targetgallery->id) selected @endif>{{$gallery->title}}</option>
-                                        @endforeach
 
-                                    </select>
-                                </div>
 
 
                                 <div class="form-group col-md-10">
@@ -53,10 +44,10 @@
                             <div class="row" class="col-md-12">
 
 
-                                    @foreach ($targetgallery->images as $image)
+                                    @foreach ($targetimages as $image)
 
                                         <div class="col-md-2">
-                                            <img src="{{asset('storage/images/'.$image->image)}}" width="100%">
+                                            <img src="{{asset('storage/'.$image->image)}}" width="100%">
                                             <span class="btn btn-primary" style="margin-top:-60px;" onclick="deletefunction('<?= $image->id ?>','{{ env('MAIN_URL') }}')">X</span>
                                         </div>
 
@@ -66,9 +57,9 @@
                         </div>
                     </div>
                     <div class="tile-footer">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Image</button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update image</button>
                         &nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-secondary" href="{{ route('admin.images.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                        <a class="btn btn-secondary" href="{{ route('admin.allimages.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
                     </div>
                 </form>
             </div>
@@ -94,7 +85,7 @@ Swal.fire({
   confirmButtonText: 'Yes, delete it!'
 }).then((result) => {
   if (result.isConfirmed) {
-    $.ajax({url: url+"/admin/images/"+id+"/delete", success: function(result){
+    $.ajax({url: url+"/admin/updateimages/"+id+"/delete", success: function(result){
 
         if(result == "success"){
         Swal.fire({

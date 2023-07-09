@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Image;
+use App\Models\AllImage;
 use App\Models\Gallery;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
@@ -13,22 +13,22 @@ use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
-class ImageController extends BaseController
+class AllImageController extends BaseController
 {
     public function index(){
-        $images = Gallery::get();
+        $images = AllImage::get();
         // dd($images);
-        $this->setPageTitle('Gallery images', 'Gallery images');
-        return view('admin.images.index', compact('images'));
+        $this->setPageTitle('images', 'images');
+        return view('admin.allimages.index', compact('images'));
     }
 
     // ->distinct()
     // ->pluck('your_column')
 
     public function create(){
-        $galleries = Gallery::get();
-        $this->setPageTitle('Gallery ', 'Create Gallery images');
-        return view('admin.images.create', compact('galleries'));
+
+        $this->setPageTitle('Image ', 'Create images');
+        return view('admin.allimages.create');
     }
 
 
@@ -37,7 +37,6 @@ class ImageController extends BaseController
     public function store(Request $request){
         $this->validate($request, [
             'images[]' => 'mimes:png,jpg,jpeg',
-            'gallery_id'  => 'required',
         ]);
 
         $collection = $request->except('_token');
@@ -54,14 +53,13 @@ class ImageController extends BaseController
         $filename = time().Str::random(10).'.'. $uploadedFile->getClientOriginalExtension();
 
         Storage::disk('public')->putFileAs(
-            'images/',
+            'allimages/',
             $uploadedFile,
             $filename
         );
         // dd($filename);
-        $create = new Image();
-        $create['image'] = $filename;
-        $create['gallery_id'] = $request->gallery_id;
+        $create = new AllImage();
+        $create['image'] = 'allimages/'.$filename;
         $create->save();
 
 
@@ -71,7 +69,7 @@ class ImageController extends BaseController
     // return redirect()->back();
 
 
-            return $this->responseRedirect('admin.images.index', 'images added successfully' ,'success',false, false);
+            return $this->responseRedirect('admin.allimages.index', 'images added successfully' ,'success',false, false);
 
         } catch (QueryException $exception) {
             return $this->responseRedirectBack('Error occurred while creating images.', 'error', true, true);
@@ -80,10 +78,10 @@ class ImageController extends BaseController
     }
     public function edit($id){
         try {
-            $galleries = Gallery::get();
-            $targetgallery = Gallery::find($id);
-            $this->setPageTitle('Gallery Image', 'Edit Gallery image ');
-            return view('admin.images.edit', compact('targetgallery','galleries'));
+
+            $targetimages = AllImage::get();
+            $this->setPageTitle('Image', 'Edit image ');
+            return view('admin.allimages.edit', compact('targetimages'));
 
         } catch (ModelNotFoundException $e) {
 
@@ -97,7 +95,6 @@ class ImageController extends BaseController
 
         $this->validate($request, [
             'images[]' => 'mimes:png,jpg,jpeg',
-            'gallery_id'  => 'required',
         ]);
 
         $collection = $request->except('_token');
@@ -114,14 +111,13 @@ class ImageController extends BaseController
         $filename = time().Str::random(10).'.'. $uploadedFile->getClientOriginalExtension();
 
         Storage::disk('public')->putFileAs(
-            'images/',
+            'allimages/',
             $uploadedFile,
             $filename
         );
         // dd($filename);
-        $create = new Image();
-        $create['image'] = $filename;
-        $create['gallery_id'] = $request->gallery_id;
+        $create = new AllImage();
+        $create['image'] = 'allimages/'.$filename;
         $create->save();
 
 
@@ -134,7 +130,7 @@ class ImageController extends BaseController
     return $this->responseRedirectBack('Update sucessfully.', 'sucess', false, false);
 
 } catch (QueryException $exception) {
-    return $this->responseRedirectBack('Error occurred while updating image.', 'error', true, true);
+    return $this->responseRedirectBack('Error occurred while updating Image.', 'error', true, true);
 }
 
 
@@ -167,7 +163,7 @@ class ImageController extends BaseController
     public function delete($id){
         try{
 
-        $image = Image::find($id);
+        $image = AllImage::find($id);
 
             $image->delete();
             return "success";
