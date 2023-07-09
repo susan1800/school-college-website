@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class NoticeController extends BaseController
 {
     public function index(){
-        $notices = Notice::get();
+        $notices = Notice::latest()->get();
         $this->setPageTitle('Notice', 'Notice');
         return view('admin.notices.index', compact('notices'));
     }
