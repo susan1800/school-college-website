@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class EventController extends BaseController
 {
     public function index(){
-        $events = Event::latet()->get();
+        $events = Event::latest()->get();
         $this->setPageTitle('events', 'events');
         return view('admin.events.index', compact('events'));
     }
