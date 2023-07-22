@@ -101,7 +101,7 @@
                         <div class="col-12">
                             <textarea type="text" class="form-control @error('message') is-invalid @enderror" name="message" placeholder="Message" value="{{old('message')}}" rows="7"></textarea>
                             @error('message') {{ $message }} @enderror
-                            <button type="submit" class="btn btn-primary mt-4">Send Message</button>
+                            <button type="submit" class="btn btn-primary mt-4" onclick="clickmessage()" id="sendmessage">Send Message</button>
                         </div>
                     </div>
                 </form>
@@ -110,6 +110,11 @@
         </div> <!-- END row-->
     </div> <!-- END container-->
 </section>
+<script>
+    function clickmessage(){
+        document.getElementById('sendmessage').style.background="#809fd1";
+    }
+</script>
 
 <section class="marginTop-100 wow fadeIn">
     <div class="container">

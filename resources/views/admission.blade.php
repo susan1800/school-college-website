@@ -194,7 +194,8 @@
 
                 </div>
                 <div class="tile-footer">
-                    <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Submit Form</button>
+
+                    <button class="btn btn-primary" type="submit" onclick="clickmessage()" id="sendmessage"><i class="fa fa-fw fa-lg fa-check-circle"></i>Submit Form</button>
 
                 </div>
             </form>
@@ -203,5 +204,11 @@
 </div>
     </div>
 </section>
+
+<script>
+    function clickmessage(){
+        document.getElementById('sendmessage').style.background="#809fd1";
+    }
+</script>
 
 @include('partials.footer')
