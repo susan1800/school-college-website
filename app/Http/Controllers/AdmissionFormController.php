@@ -89,7 +89,7 @@ class AdmissionFormController extends BaseController
             // dd($collection);
             // $details[];
             // $details = $collection;
-            \Mail::to('timalsinasusan14@gmail.com')->send(new \App\Mail\Admission($collection));
+            \Mail::to('dcadhikari08@gmail.com')->send(new \App\Mail\Admission($collection));
 
             return $this->responseRedirect('admission', 'The form has been submitted successfully! We will contact you shortly.' ,'success',false, false);
 
