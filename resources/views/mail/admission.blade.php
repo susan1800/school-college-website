@@ -48,7 +48,7 @@
 <body>
   <div class="container">
     <h1>{{$details['name']}}</h1>
-    <div style="float:right"><img src="'https://advancefoundation.edu.np/public/storage/'.{{$details['image']}}" height="100px" width="100px"></div>
+    <div style="float:right"><a href="https://advancefoundation.edu.np/admin/admissionforms"><button class="button" >View All Data</button></a></div>
     <h4>Mail From:<a href="mailto:{{$details['email']}}">{{$details['email']}}</a></h4>
     <p>Applicant Details</p>
     <p>Name:{{$details['name']}}</p>
