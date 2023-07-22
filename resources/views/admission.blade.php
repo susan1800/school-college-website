@@ -26,7 +26,7 @@
     <div class="container">
 
 <div class="row">
-    <div class="col-md-8 mx-auto" style="background:white;  border-radius:20px; padding-top:30px;padding-bottom:30px;">
+    <div class="col-md-10 mx-auto" style="background:white;  border-radius:20px; padding-top:30px;padding-bottom:30px;">
         <div class="tile">
             <h5 class="tile-title">Come, join us for a better future. Together today for a successful tomorrow.
 
@@ -37,6 +37,10 @@
             <form action="{{ route('admission.store') }}" method="POST" role="form" enctype="multipart/form-data">
                 @csrf
                 <div class="tile-body">
+                    <div>
+                        <h3 style="color:brown">Personal Details</h3>
+                        <hr style="background-color:red; color:red; height:1px;">
+                    </div>
                     <div class="form-group col-md-12">
                         <label class="control-label" for="name">Applicant Full Name <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name') }}" placeholder="your full name"/>
@@ -54,6 +58,28 @@
                         @error('gender') {{ $message }} @enderror
                     </div>
                     <div class="form-group col-md-12">
+                        <label class="control-label" for="birthday">Applicant Birthday <span class="m-l-5 text-danger"> *</span></label>
+                        <input class="form-control @error('birthday') is-invalid @enderror" type="date" name="birthday" id="birthday" value="{{ old('birthday') }}"/>
+                        @error('birthday') {{ $message }} @enderror
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="control-label" for="nationality">Applicant Nationality <span class="m-l-5 text-danger"> *</span></label>
+                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" id="nationality" value="{{ old('nationality') }}" placeholder="Eg:Nepali"/>
+                        @error('nationality') {{ $message }} @enderror
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label" for="mobile">Applicant mobile number <span class="m-l-5 text-danger"> *</span></label>
+                        <input class="form-control @error('mobile') is-invalid @enderror" type="number" name="mobile" id="mobile" value="{{ old('mobile') }}" placeholder="your mobile number"/>
+                        @error('mobile') {{ $message }} @enderror
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="control-label" for="email">Applicant email address <span class="m-l-5 text-danger"> *</span></label>
+                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" value="{{ old('email') }}" placeholder="your email address"/>
+                        @error('email') {{ $message }} @enderror
+                    </div>
+
+                    <div class="form-group col-md-12">
                         <label class="control-label" for="course">course <span class="m-l-5 text-danger"> *</span></label>
                         <select  class="form-control @error('course') is-invalid @enderror" name="course" id="course" onchange="showoption()">
                             <option value="">Select Course</option>
@@ -70,6 +96,10 @@
 
 
                     <div id="see" style="display:none;">
+                        <div>
+                            <h3 style="color:brown">School Details</h3>
+                            <hr style="background-color:red; color:red; height:1px;">
+                        </div>
                     <div class="form-group col-md-12">
                         <label class="control-label" for="see_grade">SEE Grade <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('see_grade') is-invalid @enderror" type="text" name="see_grade" id="see_grade" value="{{ old('see_grade') }}" placeholder="Eg:3.15(B+)"/>
@@ -83,6 +113,10 @@
                 </div>
 
                 <div id="neb" style="display:none;">
+                    <div>
+                        <h3 style="color:brown">+2 College Details</h3>
+                        <hr style="background-color:red; color:red; height:1px;">
+                    </div>
                     <div class="form-group col-md-12">
                         <label class="control-label" for="neb_grade">+2 Grade <span class="m-l-5 text-danger"> *</span></label>
                         <input class="form-control @error('neb_grade') is-invalid @enderror" type="text" name="neb_grade" id="neb_grade" value="{{ old('neb_grade') }}" placeholder="Eg:3.15(B+)"/>
@@ -121,23 +155,11 @@
 
 
 
+                <div>
+                    <h3 style="color:brown">Parent Details</h3>
+                    <hr style="background-color:red; color:red; height:1px;">
+                </div>
 
-                    <div class="form-group col-md-12">
-                        <label class="control-label" for="birthday">Applicant Birthday <span class="m-l-5 text-danger"> *</span></label>
-                        <input class="form-control @error('birthday') is-invalid @enderror" type="date" name="birthday" id="birthday" value="{{ old('birthday') }}"/>
-                        @error('birthday') {{ $message }} @enderror
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label class="control-label" for="nationality">Applicant Nationality <span class="m-l-5 text-danger"> *</span></label>
-                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" id="nationality" value="{{ old('nationality') }}" placeholder="Eg:Nepali"/>
-                        @error('nationality') {{ $message }} @enderror
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label class="control-label" for="mobile">Applicant mobile number <span class="m-l-5 text-danger"> *</span></label>
-                        <input class="form-control @error('mobile') is-invalid @enderror" type="number" name="mobile" id="mobile" value="{{ old('mobile') }}" placeholder="your mobile number"/>
-                        @error('mobile') {{ $message }} @enderror
-                    </div>
 
                     <div class="form-group col-md-12">
                         <label class="control-label" for="father_name">Father name <span class="m-l-5 text-danger"> *</span></label>
@@ -150,6 +172,7 @@
                         <input class="form-control @error('father_number') is-invalid @enderror" type="number" name="father_number" id="father_number" value="{{ old('father_number') }}" placeholder="your father mobile number"/>
                         @error('father_number') {{ $message }} @enderror
                     </div>
+                    <hr style="background-color:red; color:red; height:1px;">
 
                     <div class="form-group col-md-12">
                         <label class="control-label">Applicant Photo <span class="m-l-5 text-danger"> *</span> </label>

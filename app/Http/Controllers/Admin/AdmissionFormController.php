@@ -17,7 +17,7 @@ class AdmissionFormController extends BaseController
 {
     public function index(){
 
-        $forms = Form::get();
+        $forms = Form::latest()->get();
         $this->setPageTitle('Admission Form', 'Admission Form');
         return view('admin.admissionforms.index', compact('forms'));
 

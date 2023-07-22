@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Mail;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Course;
@@ -38,6 +38,7 @@ class ContactController extends BaseController
             $admission = new ContactMessage($collection);
 
             $admission->save();
+            \Mail::to('timalsinasusan14@gmail.com')->send(new \App\Mail\Contact($collection));
 
             return $this->responseRedirect('contact', 'The form has been submitted successfully! We will contact you shortly.' ,'success',false, false);
 

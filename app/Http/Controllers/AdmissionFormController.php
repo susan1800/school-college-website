@@ -12,6 +12,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Illuminate\Support\Facades\Storage;
+use Mail;
 
 class AdmissionFormController extends BaseController
 {
@@ -72,6 +73,7 @@ class AdmissionFormController extends BaseController
 
             $admission = new Form($collection);
             $admission['name'] = $collection['name'];
+            $admission['email'] = $collection['email'];
             $admission['see_grade'] = $collection['see_grade'];
             $admission['course'] = $collection['course'];
             $admission['gender'] = $collection['gender'];
@@ -83,10 +85,11 @@ class AdmissionFormController extends BaseController
             $admission['school_name'] = $collection['school_name'];
             $admission['image'] = $collection['image'];
             $admission['query'] = $collection['query'];
-
-
-
             $admission->save();
+            // dd($collection);
+            // $details[];
+            // $details = $collection;
+            \Mail::to('timalsinasusan14@gmail.com')->send(new \App\Mail\Admission($collection));
 
             return $this->responseRedirect('admission', 'The form has been submitted successfully! We will contact you shortly.' ,'success',false, false);
 
